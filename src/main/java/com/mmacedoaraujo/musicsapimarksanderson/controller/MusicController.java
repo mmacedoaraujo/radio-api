@@ -24,6 +24,11 @@ public class MusicController {
         return new ResponseEntity<>(musicList, HttpStatus.OK);
     }
 
+    @GetMapping("/find")
+    public ResponseEntity<List<MusicPostRequestBody>> findMusic(@RequestParam String name) {
+        return new ResponseEntity<>(service.findMusic(name), HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<MusicPostRequestBody> insert(@RequestBody @Valid MusicPostRequestBody musicPostRequestBody) {
         return new ResponseEntity<>(service.insert(musicPostRequestBody), HttpStatus.CREATED);
@@ -32,6 +37,12 @@ public class MusicController {
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping
+    public ResponseEntity<Void> replaceMusic(@RequestBody MusicPostRequestBody musicPostRequestBody) {
+        service.replace(musicPostRequestBody);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
