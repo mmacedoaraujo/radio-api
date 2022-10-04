@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driverclassname: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/anime?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
