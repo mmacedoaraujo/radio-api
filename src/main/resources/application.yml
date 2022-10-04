@@ -1,12 +1,12 @@
 spring:
-  datasource:
-    driverclassname: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/musics?createDatabaseIfNotExist=true
-    username: root
-    password: root
   jpa:
-    hibernate.ddl-auto: update
-    generate-ddl: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: ${JDBC_DATABASE_URL}
+    username: foo
+    password: bar
+    driverClassName: org.postgresql.Driver

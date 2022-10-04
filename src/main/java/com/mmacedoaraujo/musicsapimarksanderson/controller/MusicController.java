@@ -28,4 +28,10 @@ public class MusicController {
     public ResponseEntity<MusicPostRequestBody> insert(@RequestBody @Valid MusicPostRequestBody musicPostRequestBody) {
         return new ResponseEntity<>(service.insert(musicPostRequestBody), HttpStatus.CREATED);
     }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

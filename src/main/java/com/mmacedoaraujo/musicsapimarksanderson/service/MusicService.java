@@ -24,4 +24,9 @@ public class MusicService {
 
         return MusicMapper.INSTANCE.toPostRequest(savedMusic);
     }
+
+    public void delete(Long id) {
+        Music music = repository.findById(id).orElseThrow();
+        repository.delete(music);
+    }
 }
