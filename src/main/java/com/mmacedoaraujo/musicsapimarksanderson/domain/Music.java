@@ -2,7 +2,10 @@ package com.mmacedoaraujo.musicsapimarksanderson.domain;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 @Getter
@@ -17,11 +20,8 @@ public class Music {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String albumCover;
+    private String albumCoverUrl;
     private String musicUrl;
-    @ManyToOne
-    @JoinColumn(name = "playlist_fk")
-    private Playlist playlist;
 
 
 }

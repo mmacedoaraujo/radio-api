@@ -2,8 +2,10 @@ package com.mmacedoaraujo.musicsapimarksanderson.domain;
 
 import lombok.*;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
@@ -17,7 +19,4 @@ public class Playlist {
     private Long id;
     private String name;
     private String description;
-
-    @OneToMany(mappedBy = "playlist")
-    private List<Music> musicList;
 }
