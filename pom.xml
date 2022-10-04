@@ -14,7 +14,7 @@
 	<name>springboot2-essentials</name>
 	<description>Spring course by DevDojo</description>
 	<properties>
-		<java.version>18.0.2.1</java.version>
+		<java.version>11</java.version>
 		<org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
 		<org.lombok.version>1.18.24</org.lombok.version>
 	</properties>
