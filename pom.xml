@@ -14,7 +14,7 @@
 	<name>radio-api</name>
 	<description>Test api for my friend Anderson Barbosa</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>18.0.2.1</java.version>
 		<org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
 		<org.lombok.version>1.18.24</org.lombok.version>
 	</properties>
