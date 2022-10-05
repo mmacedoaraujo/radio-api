@@ -11,7 +11,6 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@ToString
 @Builder
 @RequiredArgsConstructor
 @AllArgsConstructor
@@ -28,7 +27,8 @@ public class Playlist implements Serializable {
     private String name;
     private String description;
     private String coverUrl;
-    @OneToMany(mappedBy = "playlist")
-    @ToString.Exclude
+
+    @OneToMany(mappedBy = "playlistId")
+    @Setter(AccessLevel.NONE)
     private List<Music> musicList;
 }

@@ -1,5 +1,6 @@
 package com.mmacedoaraujo.musicsapimarksanderson.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,9 +29,11 @@ public class Music implements Serializable {
     private String albumCoverUrl;
     @NotEmpty(message = "This field cannot be empty, please specify a valid url.")
     private String musicUrl;
+
     @ManyToOne
     @JoinColumn(name = "playlist_fk")
-    private Playlist playlist;
+    @JsonIgnore
+    private Playlist playlistId;
 
 
 }
