@@ -7,7 +7,6 @@ import com.mmacedoaraujo.musicsapimarksanderson.repository.MusicRepository;
 import com.mmacedoaraujo.musicsapimarksanderson.requests.MusicPostRequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.List;
 
@@ -31,7 +30,7 @@ public class MusicService {
         return MusicMapper.INSTANCE.toPostRequestList(repository.findByNameIgnoreCase(name));
     }
 
-    public MusicPostRequestBody insert(MusicPostRequestBody music) {
+    public MusicPostRequestBody createNewMusic(MusicPostRequestBody music) {
         Music savedMusic = repository.save(MusicMapper.INSTANCE.toMusic(music));
 
         return MusicMapper.INSTANCE.toPostRequest(savedMusic);

@@ -3,6 +3,7 @@ package com.mmacedoaraujo.musicsapimarksanderson.mapper;
 import com.mmacedoaraujo.musicsapimarksanderson.domain.Music;
 import com.mmacedoaraujo.musicsapimarksanderson.requests.MusicPostRequestBody;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;

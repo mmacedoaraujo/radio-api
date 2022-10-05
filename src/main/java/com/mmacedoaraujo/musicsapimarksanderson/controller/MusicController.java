@@ -31,7 +31,7 @@ public class MusicController {
 
     @PostMapping
     public ResponseEntity<MusicPostRequestBody> insert(@RequestBody @Valid MusicPostRequestBody musicPostRequestBody) {
-        return new ResponseEntity<>(service.insert(musicPostRequestBody), HttpStatus.CREATED);
+        return new ResponseEntity<>(service.createNewMusic(musicPostRequestBody), HttpStatus.CREATED);
     }
 
     @DeleteMapping(value = "/{id}")

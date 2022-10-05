@@ -29,5 +29,6 @@ public class Playlist implements Serializable {
     private String description;
     private String coverUrl;
     @OneToMany(mappedBy = "playlist")
+    @ToString.Exclude
     private List<Music> musicList;
 }
